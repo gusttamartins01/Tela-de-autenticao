@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Autenticação WIFI Unifametro</title>
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                font-family:Arial, Helvetica, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url(foto/teste4.jpg) no-repeat center center fixed;
+                background-size: cover;
+                overflow: hidden; 
+            }
+
+            
+            .phone-frame {
+                border: 16px solid #333;
+                border-radius: 36px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                width: 375px; 
+                height: 667px; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                background-color: black; 
+                overflow: hidden; 
+            }
+
+            .phone-frame::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 8px;
+                background-color: #000000;
+                border-radius: 8px;
+                margin-top: 8px;
+            }
+
+            .phone-frame::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 40px;
+                border: 2px solid #000000;
+                border-radius: 50%;
+                margin-bottom: 8px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: linear-gradient(135deg, rgba(4, 66, 45, 0.8), rgba(13, 73, 43, 0.8), rgba(11, 80, 45, 0.8));
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 100%; 
+                width: 100%;
+                height: 100%; 
+                padding-top: 5dvh;
+                padding-bottom: 5dvh;
+                box-sizing: border-box; 
+                overflow-y: auto; 
+            }
+            .logo {
+               background: url(foto/Background.png) no-repeat center center;
+               background-size: contain;
+               background-repeat: no-repeat;
+               width: 100%;
+               height: 60px;
+               margin-bottom: 20px;
+               background-blend-mode: lighten;
+               opacity: 0.9;
+               filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+            }
+            h2 {
+                font-size: 22px;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            h3 {
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            h4 {
+                font-size: 12px;
+                color: #fff;
+                text-align: center;
+                margin-top: 20px;
+            }
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                font-size: 14px;
+                color: #fff;
+                margin-bottom: 5px;
+                
+            }
+            input[type="text"],
+            input[type="password"] {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                padding: 10px;
+                margin-top: 2dvh;
+                background: #f0f0f0;
+                color: #005c4c;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                height: 40px;
+                transition: background 0.5s, transform 0.2s;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            input[type="submit"]:hover {
+                background: #e0e0e0;
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="phone-frame">
+            <div class="container">
+                <div class="logo"></div>
+                <h2>BEM-VINDO AO WI-FI     DA UNIFAMETRO</h2>
+                <h3>CONECTE-SE Á NOSSA REDE UTILIZANDO O SEU USUÁRIO E SENHA DO PORTAL DO ALUNO ACADÊMICO.</h3>
+                <form action="%%AUTH_POST_URL%%" method="post">
+                    <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%" />
+                    <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%" />
+                    <label for="ft_un">USUÁRIO:</label>
+                    <input name="%%USERNAMEID%%" id="ft_un" type="text" autocorrect="off" autocapitalize="off" />
+                    <label for="ft_pd">SENHA:</label>
+                    <input name="%%PASSWORDID%%" id="ft_pd" type="password" autocomplete="off" />
+                    <input type="submit" value="Confirmar" />
+                </form>
+                <h4>DENSENVOLVIDO POR NTI-UNIFAMETRO</h4>
+            </div>
+        </div>
+    </body>
+</html>
